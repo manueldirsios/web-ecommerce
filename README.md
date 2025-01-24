@@ -1,27 +1,43 @@
-# FrontPagos
+# ms-ordenes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
+## Prerequisitos
 
-## Development server
+- Angular (18)
+- Stripe
+- Boostrab
+## Configuracion
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+El proyecto esta desarrollado en arquitectura de front standalone e implementa `Angular 18` 
 
-## Code scaffolding
+## Estructura de Proyecto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Modulo                                         | Contenido                                                                                                                                                                               |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **app.component.ts**				 | Archivo principal de arranque  del proyecto
+| **app.component.html**				 | Archivo html principal
+| **main.ts**                                    | módulo raíz de la aplicación  y enrutador                                                                                                                                                        
+**environment.ts**                          | Archivo de variables de entorno |                                                                     
+**package.json**                          | Archivo de Dependencias del proyecto
 
-## Build
+## Dependencias con otros aplicativos
+| Satelite		                       | RECURSO                 | Tipo de recurso                                   |Estructura de la solicitud       |
+| ------------------------------------ | -----------------------| --------------------------------------------------| --------------------------------|
+| **ms-productos**             	   |http://localhost:8080    | SERVICIO REST  						     			    | JSON REQUEST|   
+| **ms-ordenes**             	   |http://localhost:8081     | SERVICIO REST                  |JSON REQUEST|	
+| **ms-facturacion**             	   |http://localhost:8082     | SERVICIO REST                  |JSON REQUEST|						                                                          
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Despliegue de aplicacion
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Se desplega en S3, o cualquier sitio web.
 
-## Further help
+| DIST             | Puerto | Build                                     | Run                                             |
+| --------------------- | ------ | ----------------------------------------- | ----------------------------------------------- |
+| **web-ecommerce**| NA   | ./ng build --prod      | ng-serve -o embebido                            |
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](https://www.dirsio.mx/)
+
+![Logo](https://web-dirsio.s3.us-west-1.amazonaws.com/favicon.ico)
