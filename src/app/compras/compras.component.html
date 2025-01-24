@@ -1,0 +1,86 @@
+<div class="container my-4">
+  <div class="card mb-3" *ngFor="let order of compras">
+    <div class="card-header bg-primary  text-center text-md-start">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div>
+          <small class="text-muted">Pedido: {{ order.referenciaPago }}</small>
+          <h5 class="mb-0">Fecha: {{ order.fechaPago }}</h5>
+          <span 
+          [class]="'badge ' + 
+            (order.estatusPago === 'CONFIRMADO' ? 'bg-success' :
+            order.estatusPago === 'CANCELADO' ? 'bg-danger' :
+            order.estatusPago === 'PENDIENTE' ? 'bg-warning' : 'bg-secondary')">
+          {{order.estatusPago}}
+        </span>
+        </div>
+        <div class="text-center text-md-end mt-3 mt-md-0">
+          <h5 class="mb-0">TOTAL</h5>
+          <h5 class="text-dark">{{ order.importeTotal | currency }}</h5>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-light">
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">SubTotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let linea of order.lineasPago">
+              <td>
+                <img src="{{linea.producto.imagen}}" alt="{{linea.producto.nombre}}" width="20" class="me-2" />
+                {{linea.producto.nombre}}
+              </td>
+              <td>{{linea.producto.precioFinal| currency}}</td>
+              <td>{{linea.cantidad}}</td>
+              <td>{{linea.subtotal | currency}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div  class="card-footer bg-light d-flex justify-content-between align-items-center flex-wrap" *ngIf="order.estatusPago=='CONFIRMADO'" >
+      <div>
+        <button *ngIf="order.estatusPago=='CONFIRMADO' && order.idFactura==0" class="btn btn-primary btn-sm" (click)="facturar(content,order.id)"><i class="fa-regular fa-file"></i> Facturar</button>
+        <button *ngIf="order.estatusPago=='CONFIRMADO' && order.idFactura!=0" class="btn btn-secondary btn-sm" (click)="reimprimirFactura(content,order.idFactura)">Reimprimir Factura</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="orders-container" *ngIf="compras.length ===0 && !loading">
+
+  <img src="https://cdn-icons-png.flaticon.com/512/4076/4076500.png" alt="Empty Cart Icon"  style="max-height: 250px; width: auto">
+  <h1>Sin ordenes y <span>Pedidos!</span></h1>
+  <p>
+    Aún no has realizado ningún pedido. Comience a comprar para crear su primer pedido!</p>
+  <button routerLink="/"  type="button" class="btn btn-warning">Regresar a la tienda</button>
+</div>
+
+    <!-- Button trigger modal -->
+    <ng-template #content let-modal>
+
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Vista Previa</h4>
+        <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <embed [src]="pdfSrc" type="application/pdf" width="100%" height="600px" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss('cancel click')">Cancelar</button>
+      </div>
+
+    </ng-template>
+

@@ -1,0 +1,46 @@
+<div class="cart-container" *ngIf="cartItems.length !== 0">
+ <h2>  <i class="fa fa-shopping-cart fa-lg"></i> Carrito</h2>
+    <hr>
+    <!-- Lista de productos -->
+    <div *ngFor="let item of cartItems; let i = index" class="cart-item">
+      <div class="item-image">
+        <img [src]="item.image" alt="{{ item.name }}" />
+      </div>
+      <div class="item-details">
+        <h3>{{ item.name }}</h3>
+        <p class="availability">Disponible</p>
+        <div class="quantity-controls">
+          <button (click)="decreaseQuantity(i)">-</button>
+          <input type="number"   [(ngModel)]="item.quantity" [disabled]="true"/> 
+          <button (click)="increaseQuantity(i)">+</button>
+        </div>
+        <div class="item-options">
+          <a (click)="removeItem(i)" class="button-click">Eliminar</a> 
+        </div>
+      </div>
+      <div class="item-price">
+        {{ (item.price * item.quantity) | currency }}
+      </div>
+    </div>
+  
+    <!-- Total del carrito -->
+    <div class="cart-total">
+      Subtotal ({{ getTotalItems() }} productos): {{ getTotal() | currency }}
+       <!-- Botón de pago -->
+       <button type="button" class="btn btn-primary"  routerLink="/pago">
+        Pagar
+       </button>
+    </div>
+   
+
+  </div>
+
+
+  <div class="cart-container" *ngIf="cartItems.length ===0">
+    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170576.png" alt="Empty Cart Icon" style="max-height: 250px; width: auto">
+    <h1>Tu carrito esta <span>Vacio!</span></h1>
+    <p>Debe agregar artículos al carrito antes de proceder al pago..</p>
+    <button routerLink="/"  type="button" class="btn btn-warning">Regresar a la tienda</button>
+
+</div>
+  

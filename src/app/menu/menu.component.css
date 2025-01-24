@@ -1,0 +1,67 @@
+.navbar-location {
+  color: #ddd;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.navbar-location strong {
+  display: block;
+  color: #fff;
+}
+
+
+
+.badge-danger {
+  background-color: #f00;
+}
+
+.nav-link {
+  color: #ddd !important;
+}
+
+.navbar-brand img {
+  max-height: 30px;
+}
+
+
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff9900;
+}
+
+
+@media (max-width: 990px) {
+  .navbar-location {
+    margin-bottom: 10px; /* Añade separación entre elementos */
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+  }
+
+  .form-inline .input-group {
+    width: 100%; /* Asegura que el campo de búsqueda se ajuste */
+  }
+
+  .navbar-collapse {
+    padding: 10px; /* Agrega espacio interno para mejor visualización */
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* Cambia la dirección de los elementos a vertical */
+    text-align: center; /* Centra los enlaces del menú */
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 10px; /* Espaciado entre elementos del menú */
+  }
+
+}
+
+
+

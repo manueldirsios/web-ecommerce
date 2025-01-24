@@ -1,0 +1,17 @@
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientModule
+import { SpinnerComponent } from './spinner/spinner.component';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet,MenuComponent,FooterComponent,HttpClientModule,SpinnerComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+})
+export class AppComponent {
+  title = 'web-ecommerce';
+}

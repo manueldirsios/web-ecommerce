@@ -1,0 +1,23 @@
+footer {
+    background-color: #343a40; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    position: fixed; /* Fija el footer */
+    bottom: 0; /* Lo ubica en la parte inferior */
+    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    z-index: 1000; /* Asegura que quede encima de otros elementos */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombras opcionales */
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  footer a:hover {
+    color: #ff9900; /* Color de hover en los enlaces */
+  }
+  
+  body {
+    margin-bottom: 10px; /* Espacio para el footer fijo (ajústalo según la altura del footer) */
+  }
+  

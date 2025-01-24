@@ -1,0 +1,39 @@
+
+<div class="cart-container">
+    <!-- Contenedor de la tarjeta de detalle -->
+    <div class="detalle-contenido">
+<div class="detalle-producto" *ngIf="producto">
+  <div class="detalle-imagen">
+    <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
+  </div>
+  <div class="detalle-informacion">
+    <h2>{{ producto.nombre }}</h2>
+    <p><strong>Disponible:</strong> <span [class]="producto.stock > 0 ? 'en-stock' : 'sin-stock'">{{ producto.stock > 0 ? 'En stock' : 'Sin stock' }}</span></p>
+    <p><strong>SKU del producto:</strong> {{ producto.sku }}</p>
+    <p><strong>Categoría:</strong> {{ producto.categoria }}</p>
+    <p class="detalle-precio">$ {{ producto.precioFinal | number: '1.2-2' }} MXN</p>
+    <p *ngIf="producto.promocion" class="precio-lista">Precio Lista: $ {{ producto.precio | number: '1.2-2' }} MXN</p>
+    <p *ngIf="producto.promocion" class="detalle-descuento">Descuento: {{ producto.descuento }}%</p>
+
+    <div class="detalle-cantidad">
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" [(ngModel)]="cantidad" id="cantidad" min="1" />
+    </div>
+        <!-- Botones con salto de línea -->
+        <div class="detalle-botones">
+          <button class="btn-comprar" (click)="redirectCar(producto)" >Comprar ahora</button>
+ 
+          <button class="btn-agregar" (click)="addToCart(producto)" >Añadir al carrito</button>
+        </div>
+  </div>
+</div>
+</div>
+   <!-- Descripción del producto -->
+   <div  *ngIf="producto" class="detalle-descripcion">
+    <h3>Descripción del artículo</h3>
+    <p>{{ producto.descripcion }}</p>
+  </div>
+
+
+</div>
+

@@ -1,0 +1,26 @@
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Número máximo de líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em; /* Altura aproximada para dos líneas */
+  }
+
+  .product-image {
+    background-color: #f7f7f7; /* Fondo gris */
+    border-radius: 8px; /* Opcional */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Ajusta según tu diseño */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    
+  }
+  
+  .product-image img {
+    width: 100%; /* Ajusta el ancho al contenedor */
+    height: 100%; /* Ajusta la altura al contenedor */
+    object-fit: cover; /* Cubre todo el contenedor eliminando márgenes */
+    border-radius: 8px; /* Igual al fondo si es necesario */
+  }

@@ -1,0 +1,26 @@
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let articulo of articulos">
+        <div class="card mb-4 shadow-sm card-container" >
+          <div class="product-image">
+          <img  alt="" [src]="articulo.imagen" class="card-img-top mx-auto button-click" style="max-height: 200px; width: auto" routerLink="/detalle/{{articulo.id}}">
+          </div>
+          <div class="card-body" >
+            <div class="info-items button-click" routerLink="/detalle/{{articulo.id}}">
+            <h5 class="card-title">{{ articulo.nombre }}</h5>
+            <p class="card-text text-muted">{{ articulo.descripcion }}</p>
+          </div>
+          <span *ngIf="articulo.promocion" class="badge bg-danger ml-1">Promocion</span>
+            <p class="card-text"><strong>{{articulo.precioFinal | currency }}</strong></p>
+            <div class="d-flex justify-content-between align-items-center">>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent border-light ">
+            <button class="btn btn-warning" (click)="addToCart(articulo)"> <i class="fa fa-shopping-cart"></i> Añadir a Carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

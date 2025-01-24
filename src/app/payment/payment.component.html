@@ -1,0 +1,33 @@
+<!--<form novalidate (ngSubmit)="buy()" [formGroup]="stripeForm" #f="ngForm">
+    <input class="form-control" type="text" formControlName="name" placeholder="Titular">
+
+    <div id="card-element" class="field"></div>
+    <p class="error-message" *ngIf="cardError">{{ cardError }}</p>
+    <button type="submit" class="btn btn-outline-success" [disabled]="!!cardError">
+      Comprar
+    </button>
+  </form>-->
+
+
+<br>
+  <div class="payment-card-container">
+    <h2><i class="fa-sharp fa-regular fa-credit-card"></i>
+      Información de Pago</h2>
+    <div class="card-form">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"><i class="fa-sharp fa-regular fa-user"></i></span>
+        <input type="text" class="form-control stripe-card-input" placeholder="Titular de la Tarjeta" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+      <!--<input  class="stripe-card-input form-control" type="text" placeholder="Titular Tarjeta">-->
+      <!-- Stripe Elements Card -->
+      <div id="card-element" class="stripe-card-input"></div>
+      <div id="card-errors" role="alert" class="error-message"></div>
+      <p class="error-message" *ngIf="cardError">{{ cardError }}</p>
+
+      <!-- Botón de pago -->
+      <button (click)="buy()" >
+       Pagar
+      </button>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center">¿Deseas confirmar el pago?</h5>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="text-center">Datos del pago:</h5>
+        <p><b>ID:</b> {{idPagoStripe}}</p>
+        <p><b>ID Pago:</b> {{idPago}}</p>
+        <p><b>Num Producto's:</b> #{{totalProductos}}</p>
+        <p><b>Producto's:</b> {{descripcionProducto}}</p>
+        <p><b>Precio:</b> {{precio | currency}} </p>
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <button type="button" class="btn btn-success btn-block" (click)="confirmar(idPago,idPagoStripe)">Confirmar</button>
+        <button type="button" class="btn btn-danger btn-block" (click)="cancelar(idPago,idPagoStripe)">Cancelar</button>
+      </div>
+    </div>
+  </div> 
+  

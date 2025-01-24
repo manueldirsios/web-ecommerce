@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="https://assets-dirsio.s3.us-east-1.amazonaws.com/LOGO-DIRSIO6.svg" alt="Logo" style="height: 30px; margin-right: 10px;"> <!-- Reemplaza con tu logo -->
+  </a>
+  
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarContent">
+    <!-- Selector de ubicación -->
+    <div class="navbar-location ml-3">
+      <span>Enviar a Manuel</span>
+      <strong>Ciudad de México, 14000</strong>
+    </div>
+
+    <!-- Barra de búsqueda -->
+    <form class="form-inline mx-auto">
+      <div class="input-group">
+        <select class="custom-select" style="border-radius: 0;">
+          <option selected>Todas las categorías</option>
+          <option value="1">Electrónica</option>
+          <option value="2">Ropa</option>
+          <option value="3">Hogar</option>
+        </select>
+        
+        <input class="form-control" type="search" placeholder="Buscar en Productos" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <!-- Opciones de usuario y carrito -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Hola Manuel</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/compras">Devoluciones y Pedidos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/cart">
+          <i class="fa fa-shopping-cart"></i> Carrito 
+          <span *ngIf="carritoCantidad > 0" class="badge badge-danger ml-1">{{ carritoCantidad }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

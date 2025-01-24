@@ -1,0 +1,59 @@
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 30px;
+  }
+  
+  .card-header {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card-footer {
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .img-thumbnail {
+    object-fit: cover;
+  }
+  
+  .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
+    .card-header {
+      text-align: center; /* Centra todo el contenido del encabezado */
+    }
+  
+    .card-header .d-flex {
+      flex-direction: column; /* Cambia el diseño a columnas */
+      align-items: center; /* Centra horizontalmente los elementos */
+    }
+  
+    .card-header .text-md-start {
+      text-align: center; /* Sobrescribe el alineado en pantallas pequeñas */
+    }
+  }
+
+
+  /*ORDERS*/
+
+  .orders-container {
+    width: 80%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 70px; /* Aumenta la distancia desde el footer */
+    padding-bottom: 70px; /* Espaciado adicional interno */
+}

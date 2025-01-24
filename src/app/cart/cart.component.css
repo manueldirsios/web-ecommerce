@@ -1,0 +1,118 @@
+.cart-container {
+    width: 80%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 70px; /* Aumenta la distancia desde el footer */
+    padding-bottom: 70px; /* Espaciado adicional interno */
+  }
+  
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .deselect-link {
+    font-size: 0.9rem;
+    color: #0073e6;
+    text-decoration: none;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+  }
+  
+  .item-image img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .item-details {
+    flex: 1;
+  }
+  
+  .item-details h3 {
+    font-size: 1rem;
+    margin: 0 0 10px;
+  }
+  
+  .availability {
+    color: #2ecc71;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .quantity-controls button {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .quantity-controls input {
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+  
+  .item-options a {
+    font-size: 0.9rem;
+    color: #0073e6;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  
+  .item-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .cart-total {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .cart-item {
+      display: flex;
+      flex-direction: column; /* Cambia a columna para que los elementos se apilen */
+      align-items: center; /* Asegura que los elementos queden alineados a la izquierda */
+      text-align: center; /* Asegura que el texto también esté centrado */
+
+    }
+  
+    .cart-item-price {
+      white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+      overflow: hidden; /* Oculta el contenido desbordado */
+      text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es demasiado largo */
+      max-width: 100%; /* Asegura que ocupe el ancho disponible */
+      text-align: right; /* Alinea el precio a la derecha si es necesario */
+    }
+
+    .cart-item-price, .cart-item-actions {
+      width: 100%; /* Asegura que los elementos ocupen todo el ancho disponible */
+      text-align: center; /* Centra el texto de precios y acciones */
+    }
+  }
+  
