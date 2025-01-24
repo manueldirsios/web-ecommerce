@@ -37,6 +37,8 @@ Se desplega en S3, o cualquier sitio web.
 | --------------------- | ------ | ----------------------------------------- | ----------------------------------------------- |
 | **web-ecommerce**| NA   | ./ng build --prod      | ng-serve -o embebido                            |
 
+## Demo
+https://e-commerce.dirsio.mx/
 
 [![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](https://www.dirsio.mx/)
 
